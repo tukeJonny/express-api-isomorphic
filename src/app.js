@@ -46,6 +46,13 @@ app.post("/register", function(req, res) {
 
 app.put("/update", function(req, res) {
 	logger.app("/update API");
+	var username = req.body.username;
+	var password = req.body.password;
+	if( check_user(username, password) ) {
+		res.json({"status": "ok"})
+	} else {
+		res.json({"status": "ng"})
+	}
 });
 
 http.listen(3000, function() {
