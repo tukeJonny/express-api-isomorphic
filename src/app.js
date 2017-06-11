@@ -15,7 +15,7 @@ function check_user(username, password) {
 	} else {
 		logger.error("Invalid username or password.");
 	}
-
+}
 
 app.get("/login", function(req, res) {
 	logger.app("/login API");
@@ -42,6 +42,10 @@ app.post("/register", function(req, res) {
 	} else {
 		res.json({"status": "ng"});
 	}
+});
+
+app.put("/update", function(req, res) {
+	logger.app("/update API");
 });
 
 http.listen(3000, function() {
